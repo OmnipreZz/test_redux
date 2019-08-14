@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 
 class Home extends Component {
@@ -9,7 +10,9 @@ class Home extends Component {
       posts.map( post => {
         return (
           <div className="base" key={post.id}>
-            <h2>{post.title}</h2>
+            <Link to={"/" + post.id}>
+              <h2>{post.title}</h2>
+            </Link>
             <p>{post.body}</p>
           </div>
         )
